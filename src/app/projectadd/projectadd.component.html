@@ -1,0 +1,79 @@
+<div class="form-container">
+  <h1 class="mat-dialog-form">
+    Remplissez les champs pour ajouter un nouveau projet
+  </h1>
+  <div class="mat-dialog-content">
+    <form #addForm="ngForm" (ngSubmit)="addProject(addForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Libellé du projet</mat-label>
+        <input
+          ngModel
+          name="projectName"
+          matInput
+          required
+          placeholder="Libellé du projet "
+        />
+        <mat-error> Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Libellé du projet</mat-label>
+        <input
+          formControlName="idCompany"
+          matInput
+          required
+          placeholder="Libellé du projet "
+          [(ngModel)]="project.idCompany"
+        />
+        <mat-error> Ce champ est obligatoire</mat-error>
+      </mat-form-field> -->
+      <div>
+        <mat-form-field appearance="fill" ngModelGroup="company">
+          <mat-label>Nom de la compagnie</mat-label>
+          <mat-select
+            (selectionChange)="ChangeDepartement($event)"
+            ngModel
+            name="idCompany"
+          >
+            <mat-option
+              id="idCompany"
+              matInput
+              [value]="company.idCompany"
+              *ngFor="let company of companies"
+              required
+              >{{ company.companyName }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!-- <label for=""><h1>Etat des produits</h1></label>
+      <mat-radio-group formControlName="idCompany" class="example-radio-group">
+        <mat-radio-button
+          class="example-radio-button"
+          *ngFor="let company of companies"
+          [value]="company.idCompany"
+        >
+          
+          {{ company.companyName }}
+        </mat-radio-button>
+      </mat-radio-group> -->
+
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Nom du produit</mat-label>
+        <input formControlName="productName" matInput placeholder="Nom" />
+        <mat-error> Ce champ est obligatoire</mat-error>
+      </mat-form-field> -->
+      <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
+        <button
+          style="margin-left: 8px"
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          {{ actionBtn }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

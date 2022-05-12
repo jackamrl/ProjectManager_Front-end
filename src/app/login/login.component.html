@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="logo">
+      <!-- <img src="./../../assets/icons8_customer_120px.png" alt="" class="ddd" /> -->
+      <mat-icon>person</mat-icon>
+    </div>
+    <div class="sgnin-signup">
+      <form [formGroup]="loginForm" class="sign-in-form" (ngSubmit)="login()">
+        <h2 class="title">Connexion</h2>
+        <div class="input-filed">
+          <mat-icon>account_circle</mat-icon>
+
+          <input
+            formControlName="username"
+            type="text"
+            placeholder="Nom d'utilisateur"
+            required
+            name="username"
+            id="username"
+            [(ngModel)]="user.username"
+          />
+        </div>
+        <div class="input-filed">
+          <mat-icon>lock</mat-icon>
+          <input
+            formControlName="password"
+            type="password"
+            placeholder="Mot de passe"
+            required
+            name="password"
+            id="password"
+            [(ngModel)]="user.password"
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+          />
+          <mat-icon
+            style="
+              margin-left: 325px;
+              position: absolute;
+              font-size: 1.5rem;
+              cursor: pointer;
+              margin-top: 7px;
+            "
+            matSuffix
+            (click)="togglePasswordVisibility()"
+          >
+            {{ showPassword ? "visibility_off" : "visibility" }}
+          </mat-icon>
+        </div>
+        <p class="forgetpwd">Mot de passe oublié ?</p>
+        <input
+          type="submit"
+          value="se connceter"
+          class="btn solid"
+          [disabled]="!loginForm.valid"
+          (click)="loaddata()"
+        />
+      </form>
+      <mat-spinner *ngIf="showSpinner" diameter="40"></mat-spinner>
+    </div>
+  </div>
+
+  <div class="con">
+    <h1>
+      Gérer vos projets de la <br />
+      meilleure façon <br />
+      <!-- Project Manager -->
+    </h1>
+    <div class="panels-container">
+      <!-- <h3 id="target"></h3> -->
+      <img src="./../../assets/logoproject.svg" alt="" class="image" />
+    </div>
+  </div>
+</div>

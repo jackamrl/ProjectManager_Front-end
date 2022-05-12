@@ -1,0 +1,145 @@
+@import "./../../styles.scss";
+
+
+.mat-elevation-z8 {
+  z-index: 7;
+  background-color: $color-2;
+     box-shadow: none;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  //   bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #373c47 ;
+  .imgcont{
+    width: 50px; height: 40px;
+    background: none;
+    img{
+      width:100%;
+      height: 100%;
+      
+    }
+  }
+  button{
+    position: relative;
+    text-align: center;
+    margin-left: -165px;
+    left: 515px;
+
+    line-height: 18px;
+    word-spacing: 1.5px;
+    font-family: $font-1;
+    font-size: 0.85rem;
+    width: 100px;
+    height: 29px;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background: none;
+    color: white;
+    font-weight: 550;
+    transition: 0.5s;
+    // box-shadow: 4px 4px 12px #495c80;
+    transition: .3s;
+    border: 1px solid $color-3;
+    // box-shadow: 1.5px 1.5px 12px $color-3;
+
+    &:hover{
+      background-color: $color-3;
+      color: $color-2;
+      box-shadow: 1.5px 1.5px 12px $color-3;
+
+  
+    }}
+    mat-menu-item{
+      background-color: #373c47 !important;
+    }
+  .example-spacer {
+    flex: 0.2 auto;
+  }
+
+  .title {
+    font-family: $font-1;
+      font-weight: 500;
+    color: $color-3;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  // Pour la recherche
+  .input-filed {
+    font-family: $font-1;
+    max-width: 320px;
+    width: 100%;
+    height: 40px;
+    background-color: #373c47;
+    margin: 10px 0;
+    border-radius: 55px;
+    padding: 0.4rem;
+    padding-left: 25px;
+    margin-left: -10px;
+  padding-top: 2px;
+    .ico {
+      text-align: center;
+      line-height: 40px;
+      color: rgb(141, 145, 145);
+      font-size: 1.3rem;
+      margin-left: 90px;
+      margin-top: -2px;
+    }
+
+    input {
+      font-family: $font-1;
+      background: none;
+      border: none;
+      outline: none;
+      // line-height: 1;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: $color-3;
+
+      ::placeholder {
+        color: rgb(190, 192, 192);
+        font-weight: 500;
+      }
+    }
+  }
+
+  .btn {
+    font-family: $font-1;
+    font-weight: 510;
+    transition: all ease 0.5s;
+    text-decoration: none;
+    color: $color-3;
+    font-size: 15px;
+  }
+  .btn:hover {
+    background-color: $color-3;
+    color: $color-2;
+  }
+  mat-button {
+    text-decoration: none;
+  }
+  mat-icon{
+    cursor: pointer;
+    position: absolute;
+    color: $color-3;
+    font-size: 1.4rem;
+    margin-left: 1260px;
+    margin-top: 4px;
+  }
+
+  .cercle {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    background-image: url("./../../images/photo_2022-03-30_10-29-03.jpg");
+    background-size: 100%;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+}
+

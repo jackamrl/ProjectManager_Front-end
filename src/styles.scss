@@ -1,1 +1,257 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ProjectManagerFront-end-primary: mat.define-palette(mat.$indigo-palette);
+$ProjectManagerFront-end-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$ProjectManagerFront-end-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ProjectManagerFront-end-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ProjectManagerFront-end-primary,
+      accent: $ProjectManagerFront-end-accent,
+      warn: $ProjectManagerFront-end-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ProjectManagerFront-end-theme);
+
 /* You can add global styles to this file, and also import other style files */
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:ital,wght@0,200;0,600;0,900;1,100;1,400;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Inter:wght@600;800&family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Inter:wght@600;800&family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&family=Syne:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Inter:wght@600;800&family=Lato:ital,wght@0,100;0,300;1,100&family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,600;0,900;1,100;1,400;1,900&family=Staatliches&family=Syne:wght@800&display=swap');
+$font-1: "Poppins", sans-serif;
+$font-2: 'Abril Fatface', cursive;
+$font-3: 'Bangers', cursive;
+ //$font-3: 'Inter', sans-serif;
+// $font-3: 'Syne', sans-serif;
+//$font-3: 'Staatliches', cursive;
+
+$color-1: #61dafb;
+$color-3: #f7f7f7;
+$color-2: #282c34;
+$color-4: rgb(32, 35, 42);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  html,
+  body {
+    height: 100%;
+    margin: 0.4rem auto;
+    max-width: 1296px;
+    font-family: $font-1;
+    color: $color-3;
+    background-color: $color-2;
+    
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-1;
+
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Style du matdialog de dialoglog-outcomponenet
+mat-dialog-container {
+  background-color: #0e1d38 !important;
+  color: #ffffff !important;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    font-family: $font-1 !important;
+    font-weight: 520 !important;
+    position: relative;
+    top: 15px;
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-family: $font-1 !important;
+    top: 10px;
+    font-size: 0.8rem;
+  }
+  .btn {
+    font-family: $font-1;
+    border: 2px solid white;
+    color: #ffffff;
+    border-radius: 30px;
+    background: none;
+    width: 130px;
+    height: 30px;
+  }
+
+  .btn2 {
+    font-family: $font-1 !important;
+    box-shadow: 5px 5px 5px #0a111d;
+    cursor: pointer;
+    font-weight: 300;
+    position: relative;
+    outline: none;
+    top: 51px;
+    font-size: 1rem;
+    border: 2px solid white;
+    color: #ffffff;
+    border-radius: 30px;
+    background: none;
+    width: 210px;
+    height: 35px;
+    transition: 0.4s;
+    &:hover {
+      background-color: #13233f;
+      transform: translateY(-6px);
+    }
+  }
+  p {
+    font-family: $font-1 !important;
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    font-weight: 500;
+    color: #a8b1c5;
+  }
+  .cercle {
+    cursor: pointer;
+    height: 65px;
+    width: 65px;
+    margin: auto;
+
+    background-image: url("./images/photo_2022-03-30_10-29-03.jpg");
+    background-size: 100%;
+    background-size: cover;
+    border-radius: 50%;
+  }
+}
+
+
+.notif {
+  color: #ffffff !important;
+  justify-content: center;
+  text-align: left;
+  .contenu {
+    font-family: $font-1 !important;
+    // top: 10px;
+    font-size: 0.68rem;
+    line-height: 12px;
+    cursor: pointer;
+  }
+}
+
+mat-list{
+  color: #ffffff !important;
+  justify-content: center;
+  text-align: left;
+  mat-list-item{
+    color: #ffffff !important;
+    font-family: $font-1 !important;
+    // top: 10px;
+    font-size: 0.70rem!important; 
+    // line-height: 12px;
+    cursor: pointer;
+    mat-list-item::-webkit-scrollbar {
+      width: 12px; /* width of the entire scrollbar */
+    }
+    
+    mat-list-item::-webkit-scrollbar-track {
+      background: $color-3; /* color of the tracking area */
+    }
+    
+    mat-list-item::-webkit-scrollbar-thumb {
+      background-color: $color-2; /* color of the scroll thumb */
+      border-radius: 20px; /* roundness of the scroll thumb */
+      border: 3px solid $color-3; /* creates padding around scroll thumb */
+    }
+  }
+}
+
+#container{
+  background-color: red !important;
+}
+
+
+// .grid-container{
+//   background-color: #0e1d38 !important;
+
+// }
+// body::-webkit-scrollbar {
+//   width: 12px !important; /* width of the entire scrollbar */
+// }
+
+// body::-webkit-scrollbar-track {
+//   background: $color-3 !important; /* color of the tracking area */
+// }
+
+// body::-webkit-scrollbar-thumb {
+//   background-color: $color-2 !important; /* color of the scroll thumb */
+//   border-radius: 20px !important; /* roundness of the scroll thumb */
+//   border: 3px solid $color-3 !important; /* creates padding around scroll thumb */
+// }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #94939c;
+  border: 31px none #ffffff;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #403c58;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #4d566b;
+}
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #f2f2f2;
+}
+::-webkit-scrollbar-track:active {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

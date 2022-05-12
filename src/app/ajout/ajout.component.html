@@ -1,0 +1,41 @@
+<router-outlet>
+  <app-navigation></app-navigation>
+  <app-sidenavbar></app-sidenavbar>
+</router-outlet>
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab class="minicontainer" label="Compagnie">
+    <h2>
+      Vous avez la possibilité de faire des actions comme Ajout - Supression -
+      Modification
+      <br />Cliquez sur les boutons correspondants
+    </h2>
+    <div class="lesboutons">
+      <mat-icon (click)="openDialog()">add_circle</mat-icon>
+      <mat-icon color="primary">create</mat-icon>
+      <mat-icon color="warn">delete_sweep</mat-icon>
+    </div>
+  </mat-tab>
+  <mat-tab label="Projet">
+    <h2>
+      Vous avez la possiblité d'ajouter de moduifer et de supprimer les
+      compagnies. <br />Cliquez sur les boutons correspondants
+    </h2>
+    <div class="lesboutons">
+      <mat-icon (click)="openDialogProject()">add_circle</mat-icon>
+      <mat-icon color="primary">create</mat-icon>
+      <mat-icon color="warn">delete_sweep</mat-icon>
+    </div>
+  </mat-tab>
+  <mat-tab label="Tâche">
+    <h2>
+      Vous avez la possiblité d'ajouter de moduifer et de supprimer les
+      compagnies. <br />Cliquez sur les boutons correspondants
+    </h2>
+    <div class="lesboutons">
+      <mat-icon (click)="openDialogTask()">add_circle</mat-icon>
+      <mat-icon color="primary">create</mat-icon>
+      <mat-icon color="warn">delete_sweep</mat-icon>
+    </div>
+  </mat-tab>
+  <mat-tab label="TaskLog"> TaskLog 3 </mat-tab>
+</mat-tab-group>

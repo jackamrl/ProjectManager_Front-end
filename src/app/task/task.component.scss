@@ -1,0 +1,78 @@
+
+//   @include mat-table-columns((
+//     couleur: (width: 10%, color: dimgray),
+// ));
+@import "./../../styles.scss";
+*{
+    font-family: $font-1 !important;
+    // color: $color-2 !important;
+    
+  }
+  .container {
+    font-weight: 500.3 !important;
+    h1{
+        color: $color-3;
+        font-family: $font-1;
+        font-weight: 550 !important;
+    }
+     margin: auto !important;
+
+    position: absolute;
+    max-width: 900px !important;
+    margin-top: 90px !important;
+    // height: 900px;
+    margin-left: 230px !important;
+    color: #2164d6 !important;
+    @media (max-width: 1250px) {
+      margin-left: 0;
+      margin-top: -20px;
+    }
+    .mat-column-idTask {
+        font-family: $font-1 !important;
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 8% !important;
+        width: 10% !important;
+
+      }
+    .mat-column-taskName {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 8% !important;
+        width: 10% !important;
+      }
+    .mat-column-projectName {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 8% !important;
+        width: 10% !important;
+      }
+    .mat-column-relationWithTaskLogs {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 8% !important;
+        width: 10% !important;
+      }
+  }
+  
+
+
+// @mixin mat-table-columns($columns)
+// {
+//     .mat-column-
+//     {
+//         @each $colName, $props in $columns {
+//             $width: map-get($props, 'width');
+//             &#{$colName} 
+//             {
+//                 flex: $width;
+//                 min-width: $width;
+
+//                 @if map-has-key($props, 'color') 
+//                 {
+//                     color: map-get($props, 'color');
+//                 }
+//             }  
+//         }
+//     }
+// }

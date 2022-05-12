@@ -1,0 +1,16 @@
+<div mat-dialog-container *ngIf="toDisplay" [hidden]="submitted">
+  <div class="cercle"></div>
+
+  <h2 class="nom">{{ newUserElse.firstName }} {{ newUserElse.lastName }}</h2>
+  <h4 class="mail">{{ newUserElse.email }}</h4>
+  <p>Gerer mon compte</p>
+  <!-- <button class="btn">Gerer mon compte</button> -->
+  <!-- <hr noshade align="center" size="3" color="white" width="100%" /> -->
+  <button
+    class="btn2"
+    ng-click="DialoglogOutComponent.close()"
+    (click)="logout()"
+  >
+    Deconnexion
+  </button>
+</div>

@@ -1,0 +1,84 @@
+<router-outlet>
+  <app-navigation></app-navigation>
+  <app-sidenavbar></app-sidenavbar>
+
+  <div class="container">
+    <h1>Liste des tâches</h1>
+    <div style="margin-top: 20px">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Name Column -->
+          <ng-container matColumnDef="idTaskLog">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Identifiant de la tasklog
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.idTaskLog }}
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="taskDescription">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Description de la taskLog
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.taskDescription }}
+            </td>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="taskLogDate">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Dâte de la taskLog
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.taskLogDate | date }}
+            </td>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="taskMinutes">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Nombre de minutes
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.taskMinutes }}
+            </td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="userUsername">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              L'utilisateur assigné
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.userUsername }}
+            </td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="taskIdName">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Tâche parente
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.taskIdName }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <mat-paginator
+          color="primary"
+          [pageSizeOptions]="[5, 3, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</router-outlet>

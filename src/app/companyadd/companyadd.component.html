@@ -1,0 +1,39 @@
+<div class="form-container">
+  <h1 class="mat-dialog-form">
+    Remplissez les champs pour ajouter une compagnie
+  </h1>
+  <div class="mat-dialog-content">
+    <form [formGroup]="productForm" (ngSubmit)="(addCompany)">
+      <mat-form-field appearance="outline">
+        <mat-label>Nom de la compagnie</mat-label>
+        <input
+          formControlName="companyName"
+          matInput
+          placeholder="Nom de la compagnie "
+          [(ngModel)]="company.companyName"
+        />
+        <mat-error> Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="outline">
+      <mat-label>Nom du produit</mat-label>
+      <input formControlName="productName" matInput placeholder="Nom" />
+      <mat-error> Ce champ est obligatoire</mat-error>
+    </mat-form-field> -->
+    </form>
+  </div>
+
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Fermer</button>
+    <button
+      style="margin-left: 8px"
+      mat-raised-button
+      color="primary"
+      (click)="addCompany()"
+      [disabled]="!productForm.valid"
+      type="submit"
+    >
+      {{ actionBtn }}
+    </button>
+  </div>
+</div>

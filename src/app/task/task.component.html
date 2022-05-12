@@ -1,0 +1,64 @@
+<router-outlet>
+  <app-navigation></app-navigation>
+  <app-sidenavbar></app-sidenavbar>
+
+  <div class="container">
+    <h1>Liste des tâches</h1>
+    <div style="margin-top: 20px">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Name Column -->
+          <ng-container matColumnDef="idTask">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Identifiant de la tâche
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.idTask }}
+            </td>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="taskName">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Libéllé de la tâche
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.taskName }}
+            </td>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="projectName">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Nom du projet de la tâche
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.projectName }}
+            </td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="relationWithTaskLogs">
+            <th mat-header-cell *matHeaderCellDef style="font-weight: 550">
+              Nombre des tasksLog liés
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.relationWithTaskLogs }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <mat-paginator
+          color="primary"
+          [pageSizeOptions]="[5, 3, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</router-outlet>

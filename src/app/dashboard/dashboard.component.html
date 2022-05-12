@@ -1,0 +1,254 @@
+<!-- <div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+    >
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+            <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="wrapper">
+            <div class="companies">
+              <h1>{{ size }} Projects</h1>
+            </div>
+            <div class="projects"></div>
+            <div class="tasks"></div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
+<div class="container">
+  <h3>Tableau de bord</h3>
+  <div class="left-container">
+    <div class="first">
+      <div class="soncontainer">
+        <h1>Hi {{ currentUser.username }} !</h1>
+        <p>
+          J'espere que vous allez bien, avec l'energie nécessaire pour
+          <br />
+          travailler. Sans plus tarder veuillez consulter toutes vos <br />
+          tâches en cours
+        </p>
+        <img src="./../../assets/good.svg" alt="" />
+        <button>Consulter</button>
+      </div>
+    </div>
+    <div class="second">
+      <h3 class="actv">Les activités</h3>
+      <h4>Voir tout ></h4>
+
+      <!--Tableau des compagnies-->
+
+      <div class="seconds-first">
+        <div class="logo-container">
+          <mat-icon>business</mat-icon>
+        </div>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <h3>Total Compagnies</h3>
+        <h2>{{ companySize }}</h2>
+        <button class="details" (click)="companyDetails()">
+          Détails
+          <!-- <mat-icon>navigate_next</mat-icon> -->
+        </button>
+      </div>
+
+      <!--Tableau des taches-->
+
+      <div class="seconds-second">
+        <div class="logo-container">
+          <mat-icon> bar_chart</mat-icon>
+        </div>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <h3>Total Tâches</h3>
+        <h2>{{ taskSize }}</h2>
+        <button class="details" (click)="taskDetails()">
+          Détails
+          <!-- <mat-icon>navigate_next</mat-icon> -->
+        </button>
+      </div>
+
+      <!--Tableau des projets-->
+
+      <div class="seconds-third">
+        <div class="logo-container">
+          <mat-icon>calendar_today</mat-icon>
+        </div>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <h3>Total Projets</h3>
+        <h2>{{ projectSize }}</h2>
+        <button class="details" (click)="projectDetails()">
+          Détails
+          <!-- <mat-icon>navigate_next</mat-icon> -->
+        </button>
+      </div>
+    </div>
+    <div class="third">
+      <div class="thirdcontainer">
+        <h5>Aujourd'hui à {{ CurrentTime }}</h5>
+        <h2>Contactez un administrateur ?</h2>
+        <h5 style="top: -7px; font-weight: 601; opacity: 80%">Savoir plus ></h5>
+        <button class="mesaageAdmin">
+          Envoyer un message
+          <!-- <mat-icon>navigate_next</mat-icon> -->
+        </button>
+        <!-- <div class="input-filed">
+          <input type="text" placeholder="Email" />
+        </div>
+        <div class="input-filed2">
+          <input type="text" placeholder="Votre message" />
+        </div>
+        <div class="input-filed3">
+          <input type="submit" value="Envoyer" />
+        </div> -->
+        <!-- <button>Envoyer</button> -->
+        <!-- <app-mychart></app-mychart> -->
+
+        <!-- <mat-card>
+          <mat-card-content>
+            <h2 class="example-h2">Progress bar configuration</h2>
+
+            <section
+              class="example-section"
+              *ngIf="mode === 'determinate' || mode === 'buffer'"
+            >
+              <label class="example-margin">Progress:</label>
+              <mat-slider
+                class="example-margin"
+                [(ngModel)]="value"
+              ></mat-slider>
+            </section>
+            <section class="example-section" *ngIf="mode === 'buffer'">
+              <label class="example-margin">Buffer:</label>
+              <mat-slider
+                class="example-margin"
+                [(ngModel)]="bufferValue"
+              ></mat-slider>
+            </section>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-content>
+            <h2 class="example-h2">Result</h2>
+
+            <section class="example-section">
+              <mat-progress-bar
+                class="example-margin"
+                [color]="color"
+                [mode]="mode"
+                [value]="value"
+                [bufferValue]="bufferValue"
+              >
+              </mat-progress-bar>
+            </section>
+          </mat-card-content>
+        </mat-card> -->
+      </div>
+    </div>
+    <!-- <div class="fourth"> -->
+    <!-- <div class="haut">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <div class="bas"></div> -->
+    <!-- </div> -->
+  </div>
+  <div class="right-container">
+    <div class="rightfirst">
+      <h2>Mon Journal de tâches</h2>
+      <mat-list>
+        <!-- <mat-list-item>
+          <p class="one">Nom de la tâche</p>
+          <p  class="one">Date</p>
+        </mat-list-item>
+        <mat-divider></mat-divider> -->
+
+        <!-- <ng-template *ngFor="let tasklog of HEROES"> -->
+        <mat-list-item *ngFor="let tasklog of HEROES" routerLink="/taskLog">
+          <p class="one" style="font-weight: 600">
+            {{ tasklog.taskDescription }}
+          </p>
+          <p class="two">{{ tasklog.taskLogDate }}</p>
+          <p class="three">{{ tasklog.taskIdName }}</p>
+          <mat-icon>trending_flat</mat-icon>
+
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <!-- <mat-list-item>Item 2</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Item 3</mat-list-item> -->
+        <!-- </ng-template> -->
+      </mat-list>
+    </div>
+    <div class="rightsecond">
+      <div class="nbtask">
+        <!-- <mat-icon>timeline</mat-icon> -->
+        <mat-icon> bar_chart</mat-icon>
+
+        <!-- <mat-icon>toc</mat-icon> -->
+        <!-- <img
+          class="check"
+          src="./../../assets/icons8_tasklist_50px_1.png"
+          alt=""
+        /> -->
+        <br />
+        <br />
+        <br />
+        <h1 class="nbtask2">{{ taskLogSize }}+</h1>
+        <h5 class="nbtask3">Tâches</h5>
+      </div>
+      <img src="./../../assets/proc.svg" alt="" />
+    </div>
+    <!-- <canvas id="canvas" width="400" height="400"></canvas> -->
+  </div>
+</div>

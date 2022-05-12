@@ -1,0 +1,94 @@
+@import "./../../styles.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.navigation{
+    z-index: 10;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 190px;
+    background: linear-gradient(135deg, hsla(218, 73%, 48%, 1) 50%, hsla(218, 74%, 27%, 1) 100%);
+    // background-color: #2164d6;
+    border-left: 5px solid linear-gradient(135deg, hsla(218, 73%, 48%, 1) 50%, hsla(218, 74%, 27%, 1) 100%);
+    box-sizing: inherit;
+    border-radius: 0px 25px 25px 25px;
+    height: 590px;
+    transition: width 0.5s;
+    ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-left: 5px;
+        padding-top: 40px;
+        font-family: $font-1;
+        font-size: 0.85rem;
+
+        // font-weight: 501;
+        .active {
+            background-color: $color-2;
+            // transition: 5s;          
+            a{
+                color: $color-3;
+            }
+        }
+
+        li{
+            position: relative;
+            list-style: none;
+            width: 100%;
+            border-top-left-radius: 22px;
+            border-bottom-left-radius: 22px;
+            height: 50px;   
+            transition: 0.3s;      
+            &:hover{
+                background-color: #2a5bb1;
+            }
+
+         
+            a{
+                position: relative;
+                display: block;
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+                color: $color-3; 
+                // cursor: pointer;
+
+                .icon{
+                    position: relative;
+                    display: block;
+                    min-width: 40px;
+                    height: 60px;
+                    line-height: 62px;
+                    text-align: center;
+
+                    // img{
+                    //     height: 20px;
+                    //     width: 20px;
+                    // }
+
+                    mat-icon{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .title{
+                position: relative;
+                display: block;
+                padding-left: 5px;
+                height: 60px;
+                line-height: 55px;
+                white-space: normal;
+            }
+        }
+    }
+}
