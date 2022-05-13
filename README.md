@@ -1,5 +1,21 @@
 # ProjectManagerFrontEnd
 
+Dans le cadre de la validation de l’UE Programmation distribuée en Semestre 5 à l'Institut Polytechnique 
+DEFITECH, il nous ait été demandé de réaliser un projet informatique qu’est une application web basée 
+sur une architecture micro service 
+
+Les fonctionnalités
+
+S’authentifier
+Ajouter, modifier, supprimer des compagnies
+Ajouter modifier, supprimer des projets
+Ajouter modifier, supprimer des tâches
+Assigner des mini-taches aux utilisateurs
+Consulter ses mini-tâches
+Consulter la liste des compagnies, projets, tâches
+Avoir les logs des utilisateurs
+Avoir le nombre total des taches, compagnies, projets
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
 ## Development server
