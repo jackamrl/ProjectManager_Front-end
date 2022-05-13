@@ -1,5 +1,6 @@
 # ProjectManagerFrontEnd
 
+Etudiants :  BOYODI Londou Jacques & SEMEGLO Di-Louis
 Dans le cadre de la validation de l’UE Programmation distribuée en Semestre 5 à l'Institut Polytechnique 
 DEFITECH, il nous ait été demandé de réaliser un projet informatique qu’est une application web basée 
 sur une architecture micro service 
